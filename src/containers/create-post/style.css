@@ -4,3 +4,16 @@
     justify-content: center;
     padding: 24px;
 }
+
+.createPost_loggedIn {
+    background-color: white;
+}
+.createPost_imageUpload > input{
+    display: none;
+}
+
+.createPost_uploadBtn {
+    border: none;
+    background-color: white;
+
+}
