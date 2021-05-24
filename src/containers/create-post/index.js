@@ -54,6 +54,10 @@ const handleUpload = () => {
 
                 })
             })
+
+            setCaption("");
+            setProgress(0);
+            setImage(null);
         })
     }
 }
