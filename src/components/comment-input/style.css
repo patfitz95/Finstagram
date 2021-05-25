@@ -19,3 +19,7 @@
     background-color: white;
     border: none;
 }
+
+.commentInput_btn:focus {
+    outline: none;
+}

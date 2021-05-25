@@ -3,33 +3,32 @@ import { UserContext } from "../../context/user";
 import { db } from "../../firebase";
 import "./style.css"
 
-export default function CommentInput({comments, id, user}) {
-
+export default function CommentInput({comments, id}) {
+    
     const [user, setUser] = useContext(UserContext).user;
-
     const [comment, setComment] = useState("");
-    const [commentMap, setCommentMap] = useState(comments ? comments : []);
+    const [commentArray, setCommentArray] = useState(comments ? comments : []);
 
     const addComment = () =>{
         // add comment to the Post info
         if(comment != ""){
 
-        commentMap.push({
+        commentArray.push({
             comment: comment,
-            username: user.displayName
+            username: user.email.replace("@gmail.com", "").toLowerCase(),
         });
 
         db.collection("posts")
         .doc(id)
         .update({
-            comments: commentMap
+            comments: commentArray
         }).then(function() {
             setComment('');
             console.log("comment added")
         }).catch(function(error){
             console.log(`Error ${error}`)
         })
-    }
+    setComment('')}
 }
     return (
         <div className="commentInput">
