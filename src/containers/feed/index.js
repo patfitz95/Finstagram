@@ -23,6 +23,7 @@ export default function Feed() {
                 username={post.username}
                 photoUrl={post.photoUrl}
                 caption={post.caption}
+                comments={post.comments}
                 />
             })}
         </div>
